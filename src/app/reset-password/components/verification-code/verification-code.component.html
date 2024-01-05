@@ -1,0 +1,32 @@
+<div class="mx-auto login-container">
+    <div class="mx-auto logo">
+        <img src="assets/workflow_logo.png" class="logo" alt="logo" />
+    </div>
+    <div class="card">
+        <div class="card-body login-form">
+            <h1>Enter verification code</h1>
+            <p>For your security, we'have sent the code to your email {{email?.value}} </p>
+            <form [formGroup]="verificationCodeForm" novalidate (ngSubmit)="onSubmit()">
+                <div class="mb-2">
+                    <mat-form-field class="input-block">
+                        <mat-label>{{config?.code?.htmlElement?.label}}</mat-label>
+                        <input matInput formControlName="code">
+                        <mat-error *ngIf="code?.invalid">
+                            {{codeErrorMessage}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="mb-2">
+                    <a href="javascript:void(0)">Resend code</a>
+                </div>
+                <div class="d-grid">
+                    <button mat-raised-button color="primary" class="cus-mat-btn" type="submit">{{config?.submitCode?.htmlElement?.label}}</button>
+                </div>
+            </form>
+            <div class="mt-2">
+                <h4>Need help?</h4>
+                <p>If you can’t receive the code, or if you changed your email, <a href="#">try a diffrent way</a></p>
+            </div>
+        </div>
+    </div>
+</div>

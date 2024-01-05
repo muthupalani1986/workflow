@@ -1,0 +1,522 @@
+{
+  "login": {
+    "responseMetaData": {
+      "statusCode": "0000"
+    },
+    "responsePayload": {
+      "firstName": "Muthukumar",
+      "lastName": "Palani"
+    }
+  },
+  "config": {
+    "responseMetaData": {
+      "statusCode": "0000"
+    },
+    "responsePayload": {
+      "email": {
+        "htmlElement": {
+          "label": "Email",
+          "attrubutes": {
+            "placeholder": "Enter email id"
+          }
+        },
+        "errors": {
+          "required": "Email is required",
+          "invalidEmail": "Please enter valid email"
+        }
+      },
+      "password": {
+        "htmlElement": {
+          "label": "Password",
+          "attrubutes": {
+            "placeholder": "Enter password"
+          }
+        },
+        "errors": {
+          "required": "Password is required",
+          "minlength": "Enter At least 8 characters"
+        },
+        "hint": "At least 8 characters"
+      },
+      "confirmPassword": {
+        "htmlElement": {
+          "label": "Re-enter password",
+          "attrubutes": {
+            "placeholder": "Re-enter password"
+          }
+        },
+        "errors": {
+          "required": "Re-enter Password is required",
+          "mismatch": "Password and confirm password should be same"
+        }
+      },
+      "name": {
+        "htmlElement": {
+          "label": "Your name",
+          "attributes": {
+            "placeholder": "First and last name"
+          }
+        },
+        "errors": {
+          "required": "Your name is required"
+        }
+      },
+      "getStarted": {
+        "htmlElement": {
+          "label": "Get Started"
+        }
+      },
+      "nextStep": {
+        "htmlElement": {
+          "label": "Next Step"
+        }
+      },
+      "otp": {
+        "htmlElement": {
+          "label": "Enter OTP",
+          "attrubutes": {
+            "placeholder": "Enter OTP"
+          }
+        },
+        "errors": {
+          "required": "OTP is required"
+        }
+      },
+      "createAccount": {
+        "htmlElement": {
+          "label": "Create your Workflow account"
+        }
+      },
+      "continue": {
+        "htmlElement": {
+          "label": "Continue"
+        }
+      },
+      "code": {
+        "htmlElement": {
+          "label": "Enter code",
+          "attrubutes": {
+            "placeholder": "Enter code"
+          }
+        },
+        "errors": {
+          "required": "Code is required"
+        }
+      },
+      "submitCode": {
+        "htmlElement": {
+          "label": "Submit code"
+        }
+      },
+      "signIn": {
+        "htmlElement": {
+          "label": "Sign in"
+        }
+      },
+      "businessName": {
+        "htmlElement": {
+          "label": "Business name",
+          "attrubutes": {
+            "placeholder": "Enter business name"
+          }
+        },
+        "errors": {
+          "required": "Business name is required"
+        }
+      },
+      "doingBusinessName": {
+        "htmlElement": {
+          "label": "Doing business name",
+          "attrubutes": {
+            "placeholder": "Enter doing business name"
+          }
+        },
+        "errors": {
+          "required": "Doing business name is required"
+        }
+      },
+      "ein": {
+        "htmlElement": {
+          "label": "EIN",
+          "attrubutes": {
+            "placeholder": "Enter EIN"
+          }
+        },
+        "errors": {
+          "required": "EIN is required"
+        },
+        "hint": "Employer Identification Number for the Individual/Sole Proprietorship."
+      },
+      "parentBusinessId": {
+        "htmlElement": {
+          "label": "Parent business ID",
+          "attrubutes": {
+            "placeholder": "Enter parent business ID"
+          }
+        },
+        "errors": {
+          "required": "Parent business ID is required"
+        }
+      },
+      "entityType": {
+        "htmlElement": {
+          "label": "Entity type",
+          "attrubutes": {
+            "placeholder": "Enter entity type"
+          }
+        },
+        "errors": {
+          "required": "Entity type is required"
+        }
+      },
+      "entityOwnerName": {
+        "htmlElement": {
+          "label": "Entity owner name",
+          "attrubutes": {
+            "placeholder": "Enter entity owner name"
+          }
+        },
+        "errors": {
+          "required": "Entity owner name is required"
+        }
+      },
+      "entityOwnerTitle": {
+        "htmlElement": {
+          "label": "Entity owner title",
+          "attrubutes": {
+            "placeholder": "Enter entity owner title"
+          }
+        },
+        "errors": {
+          "required": "Entity owner title is required"
+        }
+      },
+      "industry": {
+        "htmlElement": {
+          "label": "Industry",
+          "attrubutes": {
+            "placeholder": ""
+          },
+          "options": [
+            {
+              "label": "Food service",
+              "value": "1"
+            },
+            {
+              "label": "Construction",
+              "value": "2"
+            },
+            {
+              "label": "Other",
+              "value": "3"
+            }
+          ]
+        },
+        "errors": {
+          "required": "Industry is required"
+        }
+      },
+      "addressLine1": {
+        "htmlElement": {
+          "label": "Address Line 1",
+          "attrubutes": {
+            "placeholder": "Enter address line 1"
+          }
+        },
+        "errors": {
+          "required": "Address line 1 is required"
+        }
+      },
+      "addressLine2": {
+        "htmlElement": {
+          "label": "Address Line 2",
+          "attrubutes": {
+            "placeholder": "Enter address line 2"
+          }
+        },
+        "errors": {
+          "required": "Address line 2 is required"
+        }
+      },
+      "city": {
+        "htmlElement": {
+          "label": "City",
+          "attrubutes": {
+            "placeholder": "Enter city"
+          }
+        },
+        "errors": {
+          "required": "City is required"
+        }
+      },
+      "state": {
+        "htmlElement": {
+          "label": "State",
+          "attrubutes": {
+            "placeholder": "Select state"
+          },
+          "options": [
+            {
+              "name": "Alabama",
+              "abbreviation": "AL"
+            },
+            {
+              "name": "Alaska",
+              "abbreviation": "AK"
+            },
+            {
+              "name": "American Samoa",
+              "abbreviation": "AS"
+            },
+            {
+              "name": "Arizona",
+              "abbreviation": "AZ"
+            },
+            {
+              "name": "Arkansas",
+              "abbreviation": "AR"
+            },
+            {
+              "name": "California",
+              "abbreviation": "CA"
+            },
+            {
+              "name": "Colorado",
+              "abbreviation": "CO"
+            },
+            {
+              "name": "Connecticut",
+              "abbreviation": "CT"
+            },
+            {
+              "name": "Delaware",
+              "abbreviation": "DE"
+            },
+            {
+              "name": "District Of Columbia",
+              "abbreviation": "DC"
+            },
+            {
+              "name": "Federated States Of Micronesia",
+              "abbreviation": "FM"
+            },
+            {
+              "name": "Florida",
+              "abbreviation": "FL"
+            },
+            {
+              "name": "Georgia",
+              "abbreviation": "GA"
+            },
+            {
+              "name": "Guam",
+              "abbreviation": "GU"
+            },
+            {
+              "name": "Hawaii",
+              "abbreviation": "HI"
+            },
+            {
+              "name": "Idaho",
+              "abbreviation": "ID"
+            },
+            {
+              "name": "Illinois",
+              "abbreviation": "IL"
+            },
+            {
+              "name": "Indiana",
+              "abbreviation": "IN"
+            },
+            {
+              "name": "Iowa",
+              "abbreviation": "IA"
+            },
+            {
+              "name": "Kansas",
+              "abbreviation": "KS"
+            },
+            {
+              "name": "Kentucky",
+              "abbreviation": "KY"
+            },
+            {
+              "name": "Louisiana",
+              "abbreviation": "LA"
+            },
+            {
+              "name": "Maine",
+              "abbreviation": "ME"
+            },
+            {
+              "name": "Marshall Islands",
+              "abbreviation": "MH"
+            },
+            {
+              "name": "Maryland",
+              "abbreviation": "MD"
+            },
+            {
+              "name": "Massachusetts",
+              "abbreviation": "MA"
+            },
+            {
+              "name": "Michigan",
+              "abbreviation": "MI"
+            },
+            {
+              "name": "Minnesota",
+              "abbreviation": "MN"
+            },
+            {
+              "name": "Mississippi",
+              "abbreviation": "MS"
+            },
+            {
+              "name": "Missouri",
+              "abbreviation": "MO"
+            },
+            {
+              "name": "Montana",
+              "abbreviation": "MT"
+            },
+            {
+              "name": "Nebraska",
+              "abbreviation": "NE"
+            },
+            {
+              "name": "Nevada",
+              "abbreviation": "NV"
+            },
+            {
+              "name": "New Hampshire",
+              "abbreviation": "NH"
+            },
+            {
+              "name": "New Jersey",
+              "abbreviation": "NJ"
+            },
+            {
+              "name": "New Mexico",
+              "abbreviation": "NM"
+            },
+            {
+              "name": "New York",
+              "abbreviation": "NY"
+            },
+            {
+              "name": "North Carolina",
+              "abbreviation": "NC"
+            },
+            {
+              "name": "North Dakota",
+              "abbreviation": "ND"
+            },
+            {
+              "name": "Northern Mariana Islands",
+              "abbreviation": "MP"
+            },
+            {
+              "name": "Ohio",
+              "abbreviation": "OH"
+            },
+            {
+              "name": "Oklahoma",
+              "abbreviation": "OK"
+            },
+            {
+              "name": "Oregon",
+              "abbreviation": "OR"
+            },
+            {
+              "name": "Palau",
+              "abbreviation": "PW"
+            },
+            {
+              "name": "Pennsylvania",
+              "abbreviation": "PA"
+            },
+            {
+              "name": "Puerto Rico",
+              "abbreviation": "PR"
+            },
+            {
+              "name": "Rhode Island",
+              "abbreviation": "RI"
+            },
+            {
+              "name": "South Carolina",
+              "abbreviation": "SC"
+            },
+            {
+              "name": "South Dakota",
+              "abbreviation": "SD"
+            },
+            {
+              "name": "Tennessee",
+              "abbreviation": "TN"
+            },
+            {
+              "name": "Texas",
+              "abbreviation": "TX"
+            },
+            {
+              "name": "Utah",
+              "abbreviation": "UT"
+            },
+            {
+              "name": "Vermont",
+              "abbreviation": "VT"
+            },
+            {
+              "name": "Virgin Islands",
+              "abbreviation": "VI"
+            },
+            {
+              "name": "Virginia",
+              "abbreviation": "VA"
+            },
+            {
+              "name": "Washington",
+              "abbreviation": "WA"
+            },
+            {
+              "name": "West Virginia",
+              "abbreviation": "WV"
+            },
+            {
+              "name": "Wisconsin",
+              "abbreviation": "WI"
+            },
+            {
+              "name": "Wyoming",
+              "abbreviation": "WY"
+            }
+          ]
+        },
+        "errors": {
+          "required": "State is required"
+        }
+      },
+      "zipCode": {
+        "htmlElement": {
+          "label": "ZIP Code",
+          "attrubutes": {
+            "placeholder": "Enter ZIP code"
+          }
+        },
+        "errors": {
+          "required": "ZIP code is required"
+        }
+      },
+      "businessPhoneNumber": {
+        "htmlElement": {
+          "label": "Business phone number",
+          "attrubutes": {
+            "placeholder": "Enter business phone number"
+          }
+        }
+      }
+    }
+  }
+}

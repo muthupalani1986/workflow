@@ -1,0 +1,24 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: auto;
+    align-items: center;
+}
+.header-container{
+    background-color:var(--header-bg-color,#0dcaf0);
+    height: 60px;  
+}
+.header .logo{
+    height: 50px;
+}
+.setps{
+    display: flex;
+    column-gap: 5px;
+}
+.mat-badge-content{
+    position:static;
+}
+.mat-mdc-form-field-subscript-wrapper{
+    min-height: 22px;
+}

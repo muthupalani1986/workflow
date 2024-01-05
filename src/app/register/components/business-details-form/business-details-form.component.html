@@ -1,0 +1,188 @@
+<div class="mx-auto account-creation-container">
+    <div class="card">
+        <div class="card-body">
+            <ng-container *ngIf="step===1">
+                <h1>Name, title to be used</h1>
+                <form (ngSubmit)="onSubmitStepOne()" [formGroup]="businessStepOneForm" novalidate #form="ngForm">
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.businessName?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="businessName">
+                            <mat-error *ngIf="businessName?.invalid">
+                                {{businessNameErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.doingBusinessName?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="doingBusinessName">
+                            <mat-error *ngIf="doingBusinessName?.invalid">
+                                {{doingBusinessNameErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.ein?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="ein">
+                            <mat-hint>{{config?.ein?.hint}}</mat-hint>
+                            <mat-error *ngIf="ein?.invalid">
+                                {{einErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.parentBusinessId?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="parentBusinessId">
+                            <mat-error *ngIf="parentBusinessId?.invalid">
+                                {{parentBusinessIdErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="d-grid">
+                        <button mat-raised-button color="primary" class="cus-mat-btn"
+                            type="submit">{{config?.nextStep?.htmlElement?.label}}</button>
+                    </div>
+                </form>
+            </ng-container>
+            <ng-container *ngIf="step ===2">
+                <h1>Entity Type and Owner Name</h1>
+                <form (ngSubmit)="onSubmitStepTwo()" [formGroup]="businessStepTwoForm" novalidate #form="ngForm">
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.entityType?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="entityType"
+                                placeholder="{{config?.entityType?.htmlElement?.attributes?.placeholder}}">
+                            <mat-error *ngIf="entityType?.invalid">
+                                {{entityTypeErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.entityOwnerName?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="entityOwnerName"
+                                placeholder="{{config?.entityOwnerName?.htmlElement?.attributes?.placeholder}}">
+                            <mat-error *ngIf="entityOwnerName?.invalid">
+                                {{entityOwnerNameErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.entityOwnerTitle?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="entityOwnerTitle"
+                                placeholder="{{config?.entityOwnerName?.htmlElement?.attributes?.placeholder}}">
+                            <mat-error *ngIf="entityOwnerTitle?.invalid">
+                                {{entityOwnerTitleErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2 d-grid">
+                        <button mat-raised-button color="primary" class="cus-mat-btn"
+                            type="submit">{{config?.nextStep?.htmlElement?.label}}</button>
+                    </div>
+                </form>
+            </ng-container>
+            <ng-container *ngIf="step===3">
+                <h1>Nature of Business</h1>
+                <p>If your business activity is not in the list, or if you have multiple activities, please select
+                    "other" and type in your answer.</p>
+                <form (ngSubmit)="onSubmitStepThree()" [formGroup]="businessStepThreeForm" novalidate #form="ngForm">
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.industry?.htmlElement?.label}}</mat-label>
+                            <mat-select formControlName="natureOfBusiness">
+                                <mat-option [value]="item.value"
+                                    *ngFor="let item of config?.industry?.htmlElement?.options">{{item.label}}</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="natureOfBusiness?.invalid">
+                                {{natureOfBusinessErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2 d-grid">
+                        <button mat-raised-button color="primary" class="cus-mat-btn"
+                            type="submit">{{config?.nextStep?.htmlElement?.label}}</button>
+                    </div>
+                </form>
+            </ng-container>
+            <ng-container *ngIf="step===4">
+                <h1>Contact Information</h1>
+                <p>Addresses must be complete as they are used to mail legal documents and renewal notices.</p>
+                <p><strong>Address (P.O. boxes are not allowed)</strong></p>
+                <form (ngSubmit)="onSubmitStepFour()" [formGroup]="businessStepFourForm" novalidate #form="ngForm">
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.addressLine1?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="addressLine1"
+                                placeholder="{{config?.addressLine1?.htmlElement?.attributes?.placeholder}}">
+                            <mat-error *ngIf="addressLine1?.invalid">
+                                {{addressLine1ErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.addressLine2?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="addressLine2"
+                                placeholder="{{config?.addressLine2?.htmlElement?.attributes?.placeholder}}">
+                            <mat-error *ngIf="addressLine2?.invalid">
+                                {{addressLine2ErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.city?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="city"
+                                placeholder="{{config?.city?.htmlElement?.attributes?.placeholder}}">
+                            <mat-error *ngIf="city?.invalid">
+                                {{cityErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.state?.htmlElement?.label}}</mat-label>
+                            <mat-select formControlName="state">
+                                <mat-option [value]="item.abbreviation"
+                                    *ngFor="let item of config?.state?.htmlElement?.options">{{item.name}}</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="state?.invalid">
+                                {{stateErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.zipCode?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="zipCode"
+                                placeholder="{{config?.zipCode?.htmlElement?.attributes?.placeholder}}">
+                            <mat-error *ngIf="zipCode?.invalid">
+                                {{zipCodeErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2">
+                        <p><strong>Phone (optional)</strong></p>
+                        <p>Your number is not required for creating account, but we (or Workflow related services) would
+                            like to call or text you with our auto-dialing technology if you seem to need help with your
+                            account and with special offers. Message and data rates may apply.</p>
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.businessPhoneNumber?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="businessPhoneNumber"
+                                placeholder="{{config?.businessPhoneNumber?.htmlElement?.attributes?.placeholder}}">
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2 d-grid">
+                        <button mat-raised-button color="primary" class="cus-mat-btn"
+                            type="submit">{{config?.nextStep?.htmlElement?.label}}</button>
+                    </div>
+                </form>
+            </ng-container>
+        </div>
+    </div>
+</div>

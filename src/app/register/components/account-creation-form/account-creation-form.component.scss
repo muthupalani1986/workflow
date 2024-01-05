@@ -1,0 +1,10 @@
+.account-creation-container{
+    width: 500px;
+    margin-top:10px;
+}
+
+@media (max-width: 575.98px) { 
+    .account-creation-container{
+        width: 100%;
+    }
+}

@@ -1,0 +1,99 @@
+<div class="mx-auto account-creation-container">
+    <div class="card">
+        <div class="card-body">
+            <ng-container *ngIf="accountCreationStep==='check-email'">
+                <h1>Let's create your free Workflow Business account</h1>
+                <p>Enter the email that you'd like to use for your business account</p>
+                <form (ngSubmit)="onSubmitDuplicateCheck()" [formGroup]="duplicateCheckForm" novalidate #form="ngForm">
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.email?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="email">
+                            <mat-error *ngIf="duplicateEmail?.invalid">
+                                {{duplicateEmailErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="d-grid">
+                        <button mat-raised-button color="primary" class="cus-mat-btn"
+                            type="submit">{{config?.getStarted?.htmlElement?.label}}</button>
+                    </div>
+                    <hr />
+                    <p>Already an Workflow Business customer? <a routerLink="/login">Sign in</a></p>
+                </form>
+            </ng-container>
+            <ng-container *ngIf="accountCreationStep==='choose-password'">
+                <h1>Enter your full name choose your business password</h1>
+                <form (ngSubmit)="onSubmit()" [formGroup]="accountCreationForm" novalidate #accountCreation="ngForm">
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.name?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="name"
+                                placeholder="{{config?.name?.htmlElement?.attributes?.placeholder}}">
+                            <mat-error *ngIf="name?.invalid">
+                                {{nameErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.email?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="email">
+                            <mat-error *ngIf="email?.invalid">
+                                {{emailErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.password?.htmlElement.label}}</mat-label>
+                            <input matInput formControlName="password" type="password">
+                            <mat-hint>{{config?.password?.hint}}</mat-hint>
+                            <mat-error *ngIf="password?.invalid">
+                                {{passwordErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.confirmPassword?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="confirmPassword" type="password">
+                            <mat-error *ngIf="confirmPassword?.invalid">
+                                {{confirmPasswordErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2 d-grid">
+                        <button mat-raised-button color="primary" class="cus-mat-btn"
+                            type="submit">{{config?.nextStep?.htmlElement?.label}}</button>
+                    </div>
+
+                    <p>By creating a account, you agree Workflow's <a href="#">Conditions of Use</a> and <a
+                            href="#">Privacy Notice</a></p>
+                </form>
+            </ng-container>
+            <ng-container *ngIf="accountCreationStep==='verify-email'">
+                <h1>Verify email address</h1>
+                <p>To verify your email, we've sent a One Time Password (OTP) to {{email?.value}} (<a href="javascript:void(0)" (click)="changeEmail()">Change</a>)</p>
+                <form (ngSubmit)="onSubmitVerifyEmail()" [formGroup]="verifyEmailForm" novalidate #form="ngForm">
+                    <div class="mb-2">
+                        <mat-form-field class="input-block">
+                            <mat-label>{{config?.otp?.htmlElement?.label}}</mat-label>
+                            <input matInput formControlName="otp">
+                            <mat-error *ngIf="otp?.invalid">
+                                {{otpErrorMessage}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="mb-2 d-grid">
+                        <button mat-raised-button color="primary" class="cus-mat-btn"
+                            type="submit">{{config?.createAccount?.htmlElement?.label}}</button>
+                    </div>
+                    <p>By creating a account, you agree Workflow's <a href="#">Conditions of Use</a> and <a
+                        href="#">Privacy Notice</a></p>
+                        <p><a href="#">Resend OTP</a></p>
+                </form>
+            </ng-container>
+        </div>
+    </div>
+</div>
